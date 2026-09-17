@@ -2,6 +2,8 @@
 
 A university project (P5, 5th semester, Electronics and Computer Engineering, Aalborg University Esbjerg, 2017) that builds a neural-network-based speech recognizer and runs it as a client-server system over a network.
 
+Write-up: [How I Offloaded Speech Recognition to a GPU Over a VPN](https://kamranthomas.com/post/speech-recognition-gpu-vpn/)
+
 Originally developed under the team name "Mavericks" by **Stefan Bîrs**, **Tiberiu-Ioan Szatmari**, and **Kamran Thomas Alimagham**.
 
 ## Goal
