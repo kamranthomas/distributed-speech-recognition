@@ -14,11 +14,13 @@ Originally developed under the team name "Mavericks" by **Stefan Bîrs**, **Tibe
 
 ## Repository layout
 
-- `AAU_P5_report/` — the full LaTeX project report (introduction, speech processing theory, machine learning theory, model development/comparison, network framework, implementation, discussion, conclusion) plus its source code (`AAU_P5_report/code/`): `rnn.py` (network + training), `tf_train_ctc.py` (CTC training loop), `serverPy.py` / `client.py` (the client-server pair), `FlacToWavPy.py` / `FileNameParserPy.py` / `txtFileMaker.py` (data-mining/preprocessing scripts).
-- `coding/` — supporting Visual Studio project sources for the data-mining scripts and an earlier iteration of the LSTM training framework.
+- `src/` — the canonical source code, cited directly by the report: `rnn.py` (network + training), `tf_train_ctc.py` (CTC training loop), `serverPy.py` / `client.py` (the client-server pair), `modelLoadPyV2.py` (the inference entry point `serverPy.py` shells out to), `FlacToWavPy.py` / `FileNameParserPy.py` / `txtFileMaker.py` (data-mining/preprocessing scripts).
+- `report/` — the full LaTeX project report (introduction, speech processing theory, machine learning theory, model development/comparison, network framework, implementation, discussion, conclusion) and its compiled PDF.
+- `archive/` — earlier iterations superseded by `src/`: `LSTM_Model/` (an earlier modular training-framework package) and `network-test/` (an earlier client/server protocol draft).
+- `python_GoogleEngine/` — an alternate approach explored: transcription via Google's off-the-shelf Speech API instead of the team's own model.
+- `MatLab/` — FFT/signal-processing exploration in MATLAB.
 - `data/` — small sample audio clips used for manual testing.
-- `figs&diagrams/`, `Sampling/`, `Links/` — supporting figures and reference notes gathered during the project.
-- `SRandDL.pdf` — background reading on speech recognition and deep learning.
+- `figs&diagrams/`, `Links/` — supporting figures and reference notes gathered during the project.
 
 ## Background / credit
 

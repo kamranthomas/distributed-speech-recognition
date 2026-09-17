@@ -8,7 +8,7 @@
 *.toc
 *.bak
 *.pdf
-!AAU_P5_report/Distributed_Speech_Recognition_System.pdf
+!report/Distributed_Speech_Recognition_System.pdf
 
 ## Intermediate documents:
 *.dvi
@@ -462,3 +462,6 @@ __pycache__/
 *.xsd.cs
 
 slprj/
+
+## Local tooling state (not project content)
+.memsearch/
