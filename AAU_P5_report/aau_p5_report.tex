@@ -1,0 +1,65 @@
+% AAU_P5_report
+%--------------------------------------------------------------
+%
+%gets rid of blank pages bellow
+\let\cleardoublepage\clearpage
+	
+\input{setup/preamble.tex}% package inclusion and set up of the document
+\input{setup/hyphenations.tex}% 
+\input{setup/macros.tex}% my new macros
+
+%--------------------------------------------------------------%
+\begin{document}
+	%frontmatter
+	\pagestyle{empty} %disable headers and footers
+	\pagenumbering{roman} %use roman page numbering in the frontmatter
+			
+	\input{sections/frontpage.tex}
+	\input{sections/colophon.tex}
+	\input{sections/titlepages.tex}
+	\cleardoublepage
+	\pdfbookmark[0]{Contents}{label:contents}
+	\pagestyle{fancy} %enable headers and footers again
+	\tableofcontents
+	
+	%\listoftodos
+	
+	\input{sections/preface.tex}	
+	\input{sections/acronyms.tex}
+			
+	\cleardoublepage
+	%mainmatter
+	\pagenumbering{arabic} %use arabic page numbering in the mainmatter
+
+		%---------------------------------------------------------%
+	\input{sections/introduction.tex}
+	
+	\input{sections/problem_description.tex}
+	
+	\input{sections/speech_processing.tex}
+	
+	\input{sections/machine_learning.tex}
+	
+	\input{sections/model_development.tex}
+	
+	\input{sections/network_framework.tex}
+	
+	\input{sections/implementation.tex}
+	
+	\input{sections/discussion.tex}
+	
+	\input{sections/conclusion.tex}
+	%---------------------------------------------------------%	
+	\printbibliography[heading=bibintoc]
+	\label{bib:mybiblio}
+	
+	\chapter{Appendix}
+	\appendix
+	\renewcommand\chaptername{Appendix}
+	\input{sections/appendixA.tex}
+	\input{sections/appendixB.tex}
+	\input{sections/appendixC.tex}
+	\input{sections/appendixD.tex}
+		
+\end{document}
+%--------------------------------------------------------------%
