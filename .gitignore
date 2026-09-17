@@ -8,6 +8,7 @@
 *.toc
 *.bak
 *.pdf
+!AAU_P5_report/Distributed_Speech_Recognition_System.pdf
 
 ## Intermediate documents:
 *.dvi
