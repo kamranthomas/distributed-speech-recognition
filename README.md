@@ -4,6 +4,13 @@ A university project (P5, 5th semester, Electronics and Computer Engineering, Aa
 
 Originally developed under the team name "Mavericks" by **Stefan Bîrs**, **Tiberiu-Ioan Szatmari**, and **Kamran Thomas Alimagham**.
 
+## Goal
+
+The core idea was to prove that a low-powered device could get real-time speech-to-text without doing the heavy compute itself, by offloading recognition to a more powerful machine over the network. That's really two combined deliverables:
+
+- **The ML side**: build a speech recognizer from scratch rather than use an off-the-shelf API — training RNN models (LSTM, LSTM+FC, BiRNN+FC) with CTC loss on the LibriSpeech corpus, and comparing the three architectures by training/validation/test error rate to see which performed best.
+- **The distributed-systems side**: prove the "distributed" part of the concept by splitting the system into a client (captures/sends audio from a modest machine) and a server (runs the trained model on a GPU machine), talking over a TCP socket through an OpenVPN tunnel — recognition-as-a-service, not just "does the model work" but "can a weak client hand off ASR work to a strong server and get a transcript back."
+
 ## What it does
 
 - Trains recurrent neural networks (LSTM and bidirectional LSTM, with fully-connected layers) in TensorFlow 1.3 to transcribe speech to text, using CTC (Connectionist Temporal Classification) loss.
@@ -24,7 +31,7 @@ Originally developed under the team name "Mavericks" by **Stefan Bîrs**, **Tibe
 
 ## Background / credit
 
-Early experimentation started from the simple LSTM reference model in Georgi Rubashkin's Silicon Valley Data Science RNN tutorial, and from ["How to Make a Simple Tensorflow Speech Recognizer"](https://youtu.be/u9FPqkuoEJ8) by Sirajology (code originally by [pannous](https://github.com/pannous)) — both cited in the report. That tutorial code isn't vendored in this repo; the team's own models (built on top of, and eventually well beyond, those starting points) live in `AAU_P5_report/code/`.
+Early experimentation started from the simple LSTM reference model in Georgi Rubashkin's Silicon Valley Data Science RNN tutorial, and from ["How to Make a Simple Tensorflow Speech Recognizer"](https://youtu.be/u9FPqkuoEJ8) by Sirajology (code originally by [pannous](https://github.com/pannous)) — both cited in the report. That tutorial code isn't vendored in this repo; the team's own models (built on top of, and eventually well beyond, those starting points) live in `src/`.
 
 ## Status
 
